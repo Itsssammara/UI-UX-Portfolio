@@ -107,7 +107,7 @@ export default function Home() {
   transition={{ duration: 0.6 }}
   className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center bg-gradient-to-r from-pink-400 via-purple-500 to-blue-400 text-transparent bg-clip-text mb-8 sm:mb-10 px-4"
 >
-  The Mind Behind the Designs
+ Meet the Designer
 </motion.h2>
 
 {/* Profile Picture */}
