@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
 
 {/* Hero Section */}
-<main className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#0d0b1f] via-[#1f1c2c] to-[#101010] text-white px-4">
+<main className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0d0b1f] via-[#1f1c2c] to-[#101010] text-white px-4">
   {/* Floating magical particles */}
   <div className="absolute inset-0 z-0 pointer-events-none">
     <div className="absolute w-full h-full bg-[radial-gradient(#ffffff11_1px,transparent_1px)] bg-[size:20px_20px] animate-pulse" />
@@ -23,34 +23,70 @@ export default function Home() {
     <div className="absolute bottom-40 right-20 w-24 h-24 bg-pink-300/10 border border-pink-400 rounded-full animate-float-fast blur-2xl" />
   </div>
 
-  {/* Welcome Card */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    className="relative z-10 backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl max-w-xl w-full text-center sm:text-left hover:scale-[1.02] transition-transform duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
-  >
-
-
-    {/* Right (Text Content) */}
-    <div className="text-center sm:text-left">
+  {/* Desktop layout container */}
+  <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start justify-between max-w-6xl w-full gap-8">
+    
+    {/* Welcome Card */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl w-full sm:max-w-xl text-center sm:text-left hover:scale-[1.02] transition-transform duration-300"
+    >
       <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text mb-2">
-        Hello, I&apos;m Ammara.
+        Hello, I'm Ammara.
       </p>
-      <p className="text-base sm:text-lg text-gray-300 tracking-wide">
+      <p className="text-base sm:text-lg text-gray-300 tracking-wide mb-6">
         Aspiring UI/UX Designer crafting bold, intuitive experiences.
       </p>
-    </div>
-        {/* Left (Icons) */}
-        <div className="flex justify-center sm:justify-start sm:flex-col items-center sm:items-start gap-4">
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 text-2xl">
-        <FaGithub />
-      </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 text-2xl">
-        <FaLinkedin />
-      </a>
-    </div>
-  </motion.div>
+
+      {/* Social Icons */}
+      <div className="flex justify-center sm:justify-start sm:flex-col items-center sm:items-start gap-4">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 text-2xl">
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 text-2xl">
+          <FaLinkedin />
+        </a>
+      </div>
+    </motion.div>
+
+    {/* Profile Picture (Outside Box on Desktop) */}
+    <motion.div
+      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.6 }}
+      className="hidden sm:flex justify-center"
+    >
+      <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-pink-400 shadow-lg hover:scale-105 transition-transform duration-300">
+        <Image
+          src="/myaboutpic.png"
+          alt="Ammara"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 rounded-full border-4 border-white opacity-10 animate-pulse" />
+      </div>
+    </motion.div>
+
+    {/* Profile Picture (Visible only on mobile inside the card) */}
+    <motion.div
+      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.6 }}
+      className="flex sm:hidden justify-center mt-8"
+    >
+      <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-pink-400 shadow-lg hover:scale-105 transition-transform duration-300">
+        <Image
+          src="/myaboutpic.png"
+          alt="Ammara"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 rounded-full border-4 border-white opacity-10 animate-pulse" />
+      </div>
+    </motion.div>
+  </div>
 
   {/* Scroll cue */}
   <a href="#case-studies" className="absolute bottom-10 z-10 flex flex-col items-center group">
@@ -60,6 +96,7 @@ export default function Home() {
     <p className="text-xs mt-2 text-gray-300 group-hover:text-pink-400">Scroll</p>
   </a>
 </main>
+
 
 
 
