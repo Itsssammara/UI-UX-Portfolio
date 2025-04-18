@@ -34,7 +34,7 @@ export default function Home() {
       className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl w-full sm:max-w-xl text-center sm:text-left hover:scale-[1.02] transition-transform duration-300"
     >
       <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text mb-2">
-        Hello, I'm Ammara.
+        Hello, I&apos;m Ammara.
       </p>
       <p className="text-base sm:text-lg text-gray-300 tracking-wide mb-6">
         Aspiring UI/UX Designer crafting bold, intuitive experiences.
